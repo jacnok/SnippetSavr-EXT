@@ -1,0 +1,92 @@
+body {
+  font-family: Calibri, sans-serif;
+  padding: 10px;
+  min-width: 300px;
+}
+
+body.light-mode {
+  background-color: #ffffff; /* Light background */
+  color: #000000; /* Dark text */
+}
+
+body.dark-mode {
+  background-color: #1e1e1e; /* Dark background */
+  color: #d4d4d4; /* Light text */
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 5px;
+  min-width: 300px;
+}
+
+textarea.light-mode {
+  background-color: #ffffff; /* Light background */
+  color: #000000; /* Dark text */
+  border: 1px solid #cccccc; /* Border color */
+}
+
+textarea.dark-mode {
+  background-color: #252526; /* Dark background */
+  color: #d4d4d4; /* Light text */
+  border: 1px solid #3c3c3c; /* Border color */
+}
+
+button {
+  margin-right: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button.light-mode {
+  background-color: #0078d4; /* Blue button background */
+  color: #ffffff; /* White text */
+  border: none;
+}
+
+button.dark-mode {
+  background-color: #0078d4; /* Blue button background */
+  color: #ffffff; /* White text */
+  border: none;
+}
+
+#savedSnippets {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+#savedSnippets.light-mode {
+  background-color: #ffffff; /* Light background */
+  color: #000000; /* Dark text */
+  border: 1px solid #cccccc; /* Border color */
+}
+
+#savedSnippets.dark-mode {
+  background-color: #252526; /* Dark background */
+  color: #d4d4d4; /* Light text */
+  border: 1px solid #3c3c3c; /* Border color */
+}
+
+#savedSnippets div {
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+#savedSnippets div.light-mode {
+  background-color: #f0f0f0; /* Light background */
+  color: #000000; /* Dark text */
+}
+
+#savedSnippets div.dark-mode {
+  background-color: #333333; /* Dark background */
+  color: #d4d4d4; /* Light text */
+}
+
