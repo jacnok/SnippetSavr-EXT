@@ -74,21 +74,27 @@ function displaySnippets() {
       const snippetDiv = document.createElement('div');
       snippetDiv.textContent = snippet;
 
+      const iconBtnContainer = document.createElement('div');
+      iconBtnContainer.classList.add('icon-button-container');
+
       const editButton = document.createElement('button');
-      editButton.textContent = 'Edit';
+      editButton.innerHTML = '<img src="img/edit.svg" alt="Edit" class="snipIcons">';
       editButton.addEventListener('click', () => editSnippet(index));
 
       const deleteButton = document.createElement('button');
-      deleteButton.textContent = 'Delete';
+      deleteButton.innerHTML = '<img src="img/delete.svg" alt="Delete" class="snipIcons">';
       deleteButton.addEventListener('click', () => deleteSnippet(index));
 
       const copyButton = document.createElement('button');
-      copyButton.textContent = 'Copy';
+      copyButton.innerHTML = '<img src="img/copy.svg" alt="Copy" class="snipIcons">';
       copyButton.addEventListener('click', () => quickCopySnippet(snippet));
 
-      snippetDiv.appendChild(editButton);
-      snippetDiv.appendChild(deleteButton);
-      snippetDiv.appendChild(copyButton);
+      iconBtnContainer.appendChild(editButton);
+      iconBtnContainer.appendChild(deleteButton);
+      iconBtnContainer.appendChild(copyButton);
+
+      snippetDiv.appendChild(iconBtnContainer);
+
       savedSnippetsDiv.appendChild(snippetDiv);
     });
   });

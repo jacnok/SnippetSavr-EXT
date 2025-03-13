@@ -6,10 +6,12 @@
 </head>
 <body>
   <h1>Snippet Saver</h1>
-  <button id="toggleTheme">Toggle Light/Dark Mode</button>
+  <div class="button-container">
+    <button id="toggleTheme" class="txtButton">Toggle Light/Dark Mode</button>
+    <button id="save" class="txtButton">Save Snippet</button>
+    <button id="copy" class="txtButton">Copy to Clipboard</button>
+  </div>
   <textarea id="snippet" placeholder="Enter your snippet here..."></textarea>
-  <button id="save">Save Snippet</button>
-  <button id="copy">Copy to Clipboard</button>
   <div id="savedSnippets"></div>
   <script src="popup.js"></script>
 </body>

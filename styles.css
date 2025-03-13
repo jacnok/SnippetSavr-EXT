@@ -17,7 +17,7 @@ body.dark-mode {
 h1 {
   font-size: 20px;
   margin-bottom: 10px;
-font-weight: bold;
+  font-weight: bold;
 }
 
 textarea {
@@ -26,67 +26,89 @@ textarea {
   margin-bottom: 10px;
   padding: 5px;
   min-width: 300px;
-}
-
-textarea.light-mode {
-  background-color: #ffffff; /* Light background */
-  color: #000000; /* Dark text */
-  border: 1px solid #cccccc; /* Border color */
-}
-
-textarea.dark-mode {
-  background-color: #252526; /* Dark background */
-  color: #d4d4d4; /* Light text */
-  border: 1px solid #3c3c3c; /* Border color */
+  display: block;
 }
 
 button {
-  margin-right: 5px;
   padding: 10px;
   cursor: pointer;
+  background: none;
+  border: none;
+ /* display: flex;*/
+  /*align-items: center;
+  justify-content: center;*/
 }
 
-button.light-mode {
+.txtButton.light-mode {
   background-color: #0078d4; /* Blue button background */
   color: #ffffff; /* White text */
   border: none;
 }
 
-button.dark-mode {
+.txtButton.dark-mode {
   background-color: #0078d4; /* Blue button background */
   color: #ffffff; /* White text */
   border: none;
+}
+
+.snipIcons {
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  clip-path: circle(50%);
+}
+
+.snipIcons:hover
+{
+  background-color: #0078d4;
+}
+
+body.light-mode .snipIcons {
+  filter: invert(1); /* Dark icons for light mode */
+}
+
+body.light-mode .snipIcons:hover {
+  background-color: #ff3d00; /* Dark icons for light mode */
+}
+
+body.dark-mode button svg {
+  fill: #ffffff; /* Light icons for dark mode */
 }
 
 #savedSnippets {
-  margin-top: 10px;
-  padding: 10px;
+margin-top: 10px;
+padding: 10px;
 }
 
 #savedSnippets.light-mode {
-  background-color: #ffffff; /* Light background */
-  color: #000000; /* Dark text */
-  border: 1px solid #cccccc; /* Border color */
+background-color: #F2FBFD; /* Light background */
+color: #000000; /* Dark text */
+border: 1px solid #cccccc; /* Border color */
 }
 
 #savedSnippets.dark-mode {
-  background-color: #252526; /* Dark background */
-  color: #d4d4d4; /* Light text */
-  border: 1px solid #3c3c3c; /* Border color */
+background-color: #252526; /* Dark background */
+color: #d4d4d4; /* Light text */
+border: 1px solid #3c3c3c; /* Border color */
 }
 
 #savedSnippets div {
-  margin-bottom: 5px;
-  padding: 5px;
+margin-bottom: 5px;
+padding: 5px;
 }
 
 #savedSnippets div.light-mode {
-  background-color: #f0f0f0; /* Light background */
-  color: #000000; /* Dark text */
+background-color: #F2FBFD; /* Light background */
+color: #000000; /* Dark text */
 }
 
 #savedSnippets div.dark-mode {
-  background-color: #333333; /* Dark background */
-  color: #d4d4d4; /* Light text */
+background-color: #252526; /* Dark background */
+color: #d4d4d4; /* Light text */
 }
 
+.icon-button-container {
+  display: flex;
+  gap: 5px; /* Space between buttons */
+}
