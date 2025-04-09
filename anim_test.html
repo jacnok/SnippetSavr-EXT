@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Test</title>
+    <style>
+        @keyframes flashMintGreen {
+            0% { background-color: transparent; }
+            50% { background-color: Chartreuse; }
+            100% { background-color: transparent; }
+        }
+        .flash-once {
+            animation: flashMintGreen 0.5s ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        #testDiv {
+            width: 100px;
+            height: 100px;
+            background-color: lightgray;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="testDiv">Test Div</div>
+    <button id="testButton">Test Animation</button>
+    <script>
+        document.getElementById('testButton').addEventListener('click', () => {
+            const testDiv = document.getElementById('testDiv');
+            testDiv.classList.remove('flash-once');
+            void testDiv.offsetWidth; // Trigger reflow
+            testDiv.classList.add('flash-once');
+        });
+    </script>
+</body>
+</html>

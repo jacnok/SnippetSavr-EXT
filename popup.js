@@ -47,21 +47,25 @@ function deleteSnippet(index) {
 function editSnippet(index) {
   chrome.storage.local.get({ snippets: [] }, function(result) {
     const snippets = result.snippets;
-    document.getElementById('snippet').value = snippets[index];
-    deleteSnippet(index); // Remove the snippet from the list to avoid duplicates
+    const snippetDiv = document.querySelector(`#savedSnippets div:nth-child(${index + 1})`);
+    snippetDiv.classList.add('fade-up-out');
+    setTimeout(() => {
+      document.getElementById('snippet').value = snippets[index];
+      deleteSnippet(index); // Remove the snippet from the list to avoid duplicates
+    }, 200); // Wait for the animation to complete
   });
 }
 
 function quickCopySnippet(snippet) {
   navigator.clipboard.writeText(snippet).then(() => {
-    alert('Snippet copied to clipboard!');
+    // alert('Snippet copied to clipboard!');
   });
 }
 
 function copySnippet() {
   const snippet = document.getElementById('snippet').value;
   navigator.clipboard.writeText(snippet).then(() => {
-    alert('Snippet copied to clipboard!');
+    // alert('Snippet copied to clipboard!');
   });
 }
 
@@ -87,7 +91,18 @@ function displaySnippets() {
 
       const copyButton = document.createElement('button');
       copyButton.innerHTML = '<img src="img/copy.svg" alt="Copy" class="snipIcons">';
-      copyButton.addEventListener('click', () => quickCopySnippet(snippet));
+      copyButton.addEventListener('click', () =>
+      {
+        quickCopySnippet(snippet);
+        window.setTimeout(function() {
+          snippetDiv.classList.remove('flash-once');
+          void snippetDiv.offsetWidth; // Trigger reflow
+          snippetDiv.classList.add('flash-once');
+      }, 5);
+        // window.setTimeout(function() {
+        //   snippetDiv.classList.remove('flash-once');
+        // }, 1000);
+        });
 
       iconBtnContainer.appendChild(editButton);
       iconBtnContainer.appendChild(deleteButton);
@@ -99,6 +114,13 @@ function displaySnippets() {
     });
   });
 }
+
+document.getElementById('testButton').addEventListener('click', () => {
+  const testDiv = document.getElementById('testDiv');
+  testDiv.classList.remove('flash-once');
+  void testDiv.offsetWidth; // Trigger reflow
+  testDiv.classList.add('flash-once');
+});
 
 // Initialize the theme based on saved preference
 document.addEventListener('DOMContentLoaded', () => {

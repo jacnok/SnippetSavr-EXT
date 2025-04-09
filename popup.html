@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snippet Saver</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="animations.css">
 </head>
 <body>
   <h1>Snippet Saver</h1>
-  <div class="button-container">
-    <button id="toggleTheme" class="txtButton">Toggle Light/Dark Mode</button>
-    <button id="save" class="txtButton">Save Snippet</button>
-    <button id="copy" class="txtButton">Copy to Clipboard</button>
-  </div>
+  <button id="toggleTheme" class="txtButton">Toggle Light/Dark Mode</button>
+
   <textarea id="snippet" placeholder="Enter your snippet here..."></textarea>
+
+  <button id="save" class="txtButton">Save Snippet</button>
+  <button id="copy" class="txtButton">Copy to Clipboard</button>
+
+  <div style="display:none">
+  <div id="testDiv" class="test-div">Test Div</div>
+  <button id="testButton">Test Animation</button>
+  </div>
+
+  <!-- cannot have <script> tags inside the main html page -->
+
   <div id="savedSnippets"></div>
   <script src="popup.js"></script>
 </body>

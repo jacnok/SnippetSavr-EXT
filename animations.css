@@ -1,0 +1,56 @@
+/* Animation for background flash */
+@keyframes flashChartreuse {
+  0% {
+    background-color: transparent !important;
+    margin-left: 0px;
+    padding-right: 5px;
+  }
+  50% {
+    background-color: Chartreuse !important;
+    margin-left: 10px;
+    padding-right: 0px;
+    padding-left: 0px;
+
+  }
+  100% {
+    background-color: transparent !important;
+    margin-left: 0px;
+    padding-right: 5px;
+  }
+}
+
+.test-div {
+  background-color: transparent;
+}
+
+.flash-once {
+  animation: flashChartreuse 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+div.flash-once {
+animation: flashChartreuse 0.5s ease;
+animation-fill-mode: forwards;
+}
+
+#savedSnippets div.flash-once {
+  animation: flashChartreuse 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+/* Animation for fade up and out */
+@keyframes fadeUpOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.fade-up-out {
+    animation: fadeUpOut 0.2s ease;
+    animation-fill-mode: forwards;
+}
